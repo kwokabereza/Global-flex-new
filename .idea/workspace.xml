@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8f8c6e18-f965-42e6-8221-415be00f0867" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/murmansk/assets/build/assets/global-8c7d4dfb.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/murmansk/assets/build/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/themes/murmansk/assets/build/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/murmansk/partials/site/banner.htm" beforeDir="false" afterPath="$PROJECT_DIR$/themes/murmansk/partials/site/banner.htm" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +183,8 @@
       <workItem from="1699450345668" duration="3562000" />
       <workItem from="1699516805923" duration="3197000" />
       <workItem from="1699527794707" duration="327000" />
-      <workItem from="1699528126420" duration="689000" />
+      <workItem from="1699528126420" duration="1219000" />
+      <workItem from="1699533669983" duration="198000" />
     </task>
     <servers />
   </component>
