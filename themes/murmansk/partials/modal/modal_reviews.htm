@@ -1,0 +1,60 @@
+<div id="modal-reviews" class="modal modal-reviews fixed w-full h-full top-0 left-0 z-10 opacity-0 invisible overflow-x-hidden overflow-y-auto">
+    <a class="modal_area absolute w-full h-full top-0 left-0"></a>
+    <div class="modal_body min-h-full flex justify-center items-center z-10 px-2.5 py-8">
+        <div class="modal_content max-w-xl relative opacity-0 hidden rounded-md lazyload" data-bg="{{ 'assets/images/bg-modal-2.jpg' | theme }}">
+            <a class="modal_close absolute text-white text-2xl right-4 top-3 cursor-pointer">x</a>
+            <div class="text-center text-white uppercase text-xl font-bold mx-auto mt-10 mb-6">
+                <p>Пожалуйста, оставьте свой отзыв, мы его опубликуем</p>
+            </div>
+
+            <div class="modal_form px-8">
+                <form data-request="{{ genericForm3 }}::onFormSubmit" class="modalForm">
+
+                    {{ form_token() }}
+
+                    <div id="{{ genericForm3 }}_forms_flash"></div>
+
+                    <div class="form_cont">
+                        <input id="input" class="w-full border border-white text-white h-14 pl-8 my-1.5 mx-auto bg-transparent" type="text" name="name" placeholder="Имя">
+                    </div>
+                    <div class="form_cont">
+                        <input class="w-full border border-white text-white h-14 pl-8 my-1.5 mx-auto bg-transparent" type="tel" name="telphone" placeholder="Телефон">
+                    </div>
+                    <div class="form_cont">
+                        <textarea class="w-full border border-white text-white h-32 pl-8 my-1.5 mx-auto bg-transparent" type="text" name="comment" placeholder="Ваш отзыв"></textarea>
+                    </div>
+<!--                    <div class="file-box flex flex-col w-full mb-8">-->
+<!--                     <p class="w-full text-white my-3">Приложите фото выполненной работы</textarea>-->
+<!--                        <div class="file__field flex items-center mb-2">-->
+<!--                            <input type="file" name="file" id="file" />-->
+<!--                            <label class="file__btn inline-block text-white text-base bg-transparent border border-white px-4 py-3 cursor-pointer" id="file_btn" for="file">Выберите файл</label>-->
+<!--                            <div class="file__info flex items-center px-2.5 ml-2.5">-->
+<!--                                <div class="file__name text-white text-sm" id="file_name"></div>-->
+<!--                                <div class="file__btn-close text-xl text-red ml-2 cursor-pointer p-1 font-bold" id="file_btn_close"></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="file__hint text-sm text-gray">-->
+<!--                            <span>Максимум 20 Мб;</span>-->
+<!--                            <span>В формате jpeg, jpg, png, gif, svg</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                    <div class="modal_send text-center mt-8 mb-16">
+                        <p class="text-white mb-12">Нажимая кнопку «Оставить отзыв», вы даете свое согласие на <a class="underline" href="{{ 'politika-konfidencialnosti'|page }}">обработку персональных данных</a></p>
+                        <button id="simpleContactSubmitButton" class="lg:w-auto  text-sm font-bold uppercase border-2 border-white text-white effect effect-one effect-one-frame" type="submit"><p class="effect-button py-5 px-8">Оставить отзыв</p></button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    /* Убираем дефолтный инпут */
+    #file {
+        display: none;
+    }
+    .file__name {
+        word-spacing: 1px;
+        user-select: none;
+    }
+</style>

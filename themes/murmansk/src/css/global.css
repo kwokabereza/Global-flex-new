@@ -1,0 +1,128 @@
+@import './tailwind.css';
+@import './index.css';
+@import './common.css';
+@import './header.css';
+@import './colorbox.css';
+
+
+@layer base {
+    /*базовые стили*/
+    html {
+        @apply overflow-x-hidden;
+    }
+    body {
+        @apply overflow-x-hidden;
+    }
+    .container {
+        @apply mx-auto;
+    }
+}
+
+@layer components {
+
+    .lazyload,
+    .lazyloading {
+        @apply opacity-0;
+    }
+    .lazyloaded {
+        @apply opacity-100 transition-opacity duration-300;
+    }
+    .flexTmp{
+        @apply flex flex-wrap items-center justify-center w-full mx-auto;
+    }
+    /*стили заголовков и текстов*/
+    .title{
+        @apply text-[32px] mb-[55px] text-2xl leading-tight md:text-3xl md:leading-tight lg:text-4xl font-serif font-bold;
+    }
+    .simpleText{
+        @apply leading-relaxed lg:text-lg lg:leading-relaxed
+    }
+    h3{
+        @apply text-[14px] lg:text-[22px]
+    }
+    .siteSubtitle {
+        @apply [font-family:GraphikLCG-Black] before:left-[calc(100%_+_1rem)] after:right-[calc(100%_+_1rem)];
+    }
+    .siteSubtitle::before,
+    .siteSubtitle::after {
+        @apply content-[''] absolute -translate-y-2/4 w-[10vw] h-[3px] [background:#031e2f] top-2/4;
+    }
+    .logoText {
+        @apply text-[24px];
+    }
+    /*стили кнопок*/
+    .skewBtn{
+        @apply inline-block transform-none mt-[30px] py-[8px] bg-[#ffb400] drop-shadow-lg text-white font-[20px] cursor-pointer
+        relative mt-[20px] w-[200px] sm:skew-x-[-35deg] sm:py-[12px] sm:px-[30px] hover:before:right-0;
+    }
+    .skewBtnText{
+        @apply sm:skew-x-[35deg] whitespace-nowrap;
+    }
+    .btnTransparent {
+        @apply inline-flex border-2 border-black px-5 py-3 rounded-lg font-serif font-semibold transition-all duration-300 hover:bg-dodgerblue hover:text-white
+    }
+    /* .btnTransparent{
+        @apply relative text-black flex items-center justify-center w-full min-h-[48px] sm:w-[200px] font-serif cursor-pointer leading-[1.05] mt-[30px] px-[15px] transition-[0.5s]
+        duration-[ease-in-out] py-3 rounded-lg border-2 border-solid border-[black] bg-[#f5f5f594] text-center
+    } */
+    /* .btnTransparent:hover {
+        @apply bg-dodgerblue text-[white];
+    } */
+    .btnGradient {
+        @apply text-white bg-gradient-to-r from-[#ffb400] via-[#ffac26] to-[#ffd671] hover:bg-gradient-to-br focus:ring-4
+        focus:outline-none shadow-lg shadow-[#808080] dark:shadow-lg dark:shadow-[#808080] font-medium text-[20px] px-[50px] rounded-[5px] py-3.5 text-center mt-[40px] mb-2 min-h-[48px] block sm:ml-auto;
+    }
+    .btnBlue {
+        @apply [background:#ff2800] [background:linear-gradient(#0094d2,#00a8ee)] text-[white] text-xl cursor-pointer
+        no-underline relative text-center transition-[1s] border mt-[60px] m-auto px-10 py-2.5 p-3 rounded-[5px]
+        border-solid border-[#0094d2];
+    }
+    .btnBlue:hover {
+        @apply [background:transparent] text-[black] border border-solid border-[black];
+    }
+    /*общие классы*/
+
+    .smallContainer {
+        @apply max-w-[1140px] w-[90%] m-auto;
+    }
+    @media (max-width: 480px){
+        .container {
+            @apply w-[90%];
+        }
+        .smallContainer {
+            @apply w-[90%];
+        }
+    }
+    /*доп. стили для меню*/
+    .menuBtn {
+    @apply [font-family:Roboto-Medium,arial,sans-serif] text-xl text-[white] no-underline mx-3 my-1.5 px-0 py-0.5;
+    }
+    .subMenuItemImg {
+        @apply rounded-[25px];
+    }
+    .menuTabCloseChecker > div {
+        @apply z-[1000];
+    }
+    @media (min-width: 600px) and (max-width: 900px) {
+        .menuBtn {
+            @apply m-1.5;
+        }
+        #openNav ul {
+            @apply flex-wrap;
+        }
+    }
+}
+
+/*Модальные окна*/
+
+
+/*Маска для телефонов*/
+.sendMail {
+    @apply [background:#8e8e8e] pointer-events-none border-[none];
+}
+
+/* Добавить дополнительный класс */
+.btn--active {
+    @apply pointer-events-auto [background:linear-gradient(#0094d2,#00a8ee)] cursor-pointer;
+}
+

@@ -1,0 +1,107 @@
+[builderList]
+modelClass = "Annb\Globalflex\Models\Promo"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "id"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+{% set records = builderList.records %}
+<div class="py-8 md:py-10 lg:py-14 xl:py-20 lazyload" data-bg="{{ 'assets/images/bg-modal-2.jpg' | theme }}" id="promo">
+    <div class="container">
+        <div class="mx-auto">
+<!--            <div class="text relative anim-line element-animation pb-0.5">-->
+<!--                <h3 class="mb-6 md:mb-10 xl:mb-16 text-start font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl">Промо блок</h3>-->
+<!--                <div class="head-line absolute left-0 top-16 w-full h-px bg-lightgray rounded-md"></div>-->
+<!--            </div>-->
+         <div class="grid grid-col-1 lg:grid-cols-2 gap-12 lg:gap-8 2xl:gap-48">
+                <div class="">
+                    <h4 class="text-center lg:text-start text-4xl lg:text-5xl xl:text-6xl uppercase text-red font-bold pb-8 xs:pb-12 lg:pb-24">Акция</h4>
+                    {% for record in records %}
+                    <p class="text-center lg:text-start text-white text-2xl lg:text-3xl xl:text-4xl xl:leading-10">{{record.text}}&ensp;<span class="text-red font-bold">{{record.description}}&ensp;</span>{{record.content}}</p>
+                    {% endfor %}
+                </div>
+                <div class="relative flex flex-col justify-center items-center">
+                    <div class="rounded-md border border-white promo-form w-full sm:w-128 lg:w-full xl:w-144">
+                        <div class="text-center text-white uppercase text-sm xxs:text-base sm:text-lg xl:text-xl font-bold mx-auto mt-4 sm:mt-8 mb-3 sm:mb-6 px-4">
+                            <p>Пожалуйста, оставьте свои данные, мы Вам перезвоним</p>
+                        </div>
+                        <div class="px-6 xl:px-8">
+                            <form data-request="{{ genericForm2 }}::onFormSubmit" class="modalForm">
+
+                                {{ form_token() }}
+
+                                <div id="{{ genericForm2 }}_forms_flash"></div>
+
+                                <div class="form_cont">
+                                    <input class="w-full border border-white text-white text-sm xs:text-base h-8 xs:h-12 pl-4 xs:pl-8 my-1.5 mx-auto bg-transparent" type="text" name="name" placeholder="Имя">
+                                </div>
+                                <div class="form_cont">
+                                    <input class="w-full border border-white text-white text-sm xs:text-base h-8 xs:h-12 pl-4 xs:pl-8 my-1.5 mx-auto bg-transparent" type="tel" name="telphone" placeholder="Телефон">
+                                </div>
+                                <div class="form_cont">
+                                    <textarea class="w-full border border-white text-white text-sm xs:text-base h-16 xs:h-20 pl-4 xs:pl-8 my-1.5 mx-auto bg-transparent" type="text" name="comment" placeholder="Комментарий"></textarea>
+                                </div>
+                                <div class="modal_send text-center text-white mt-2 xs:mt-4 mb-8">
+                                    <p class="text-xs sm:text-sm mb-4 xl:mb-8">Нажимая кнопку «Оставить заявку», вы даете свое согласие на <a class="underline" href="{{ 'politika-konfidencialnosti'|page }}">обработку персональных данных</a></p>
+                                    <button id="simpleContactSubmitButton" class="lg:w-auto text-xs xs:text-sm lg:text-base font-bold text-white uppercase border-2 border-white effect effect-one effect-one-frame" type="submit">
+                                        <p class="effect-button py-3 px-4 xs:py-4 xs:px-6 lg:py-5 lg:px-8">Оставить заявку</p>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+    .text{
+        background:url(themes/murmansk/assets/images/bg-modal.jpg) no-repeat center/cover;
+        -webkit-background-clip:text;
+        -webkit-text-fill-color: transparent;
+        color:black;
+    }
+</style>
+
+<!--<div class="grid grid-col-1 lg:grid-cols-2 gap-32">-->
+<!--    <div class="">-->
+<!--        <h4 class="text-start text-2xl sm:text-3xl lg:text-4xl xl:text-5xl uppercase text-lightgreen pb-10">Акция</h4>-->
+<!--        <p class="text-start text-sm sm:text-base sm:text-lg lg:text-xl xl:text-2xl xl:leading-10 pb-8">Скидка на монтаж весь ноябрь <span class="text-red font-bold">30%</span>.</p>-->
+<!--        <p class="text-start text-sm sm:text-base sm:text-lg lg:text-xl xl:text-2xl xl:leading-10">При покупки от 15 м монтаж <span class="text-red font-bold uppercase">бесплатно</span></p>-->
+<!--    </div>-->
+<!--    <div class="relative flex flex-col justify-center items-center">-->
+<!--        <div class="rounded-md bg-lightgreen bg-opacity-25 promo-form">-->
+<!--            <div class="text-center uppercase text-xl font-bold mx-auto mt-10 mb-6">-->
+<!--                <p>Пожалуйста, оставьте свои данные, мы Вам перезвоним</p>-->
+<!--            </div>-->
+<!--            <div class="px-8">-->
+<!--                <form data-request="{{ genericForm }}::onFormSubmit" class="modalForm">-->
+
+<!--                    {{ form_token() }}-->
+
+<!--                    <div id="{{ genericForm }}_forms_flash"></div>-->
+
+<!--                    <div class="form_cont">-->
+<!--                        <input class="w-full border border-black h-14 pl-8 my-1.5 mx-auto bg-transparent" type="text" name="name" placeholder="Имя">-->
+<!--                    </div>-->
+<!--                    <div class="form_cont">-->
+<!--                        <input class="w-full border border-black h-14 pl-8 my-1.5 mx-auto bg-transparent" type="tel" name="telphone" placeholder="Телефон">-->
+<!--                    </div>-->
+<!--                    <div class="form_cont">-->
+<!--                        <input class="w-full border border-black h-14 pl-8 my-1.5 mx-auto bg-transparent" type="time" name="time" placeholder="Удобное время для звонка">-->
+<!--                    </div>-->
+<!--                    <div class="modal_send text-center mt-8 mb-8">-->
+<!--                        <p class="mb-12">Нажимая кнопку «Заказать звонок», вы даете свое согласие на <a class="underline" href="{{ 'politika'|page }}">обработку персональных данных</a></p>-->
+<!--                        <button id="simpleContactSubmitButton" class="lg:w-auto text-sm font-bold uppercase border-2  effect effect-one effect-one-frame" type="submit"><p class="effect-button py-5 px-8">Заказать звонок</p></button>-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->

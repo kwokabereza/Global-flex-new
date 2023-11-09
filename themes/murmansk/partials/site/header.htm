@@ -1,0 +1,165 @@
+{% set arMenuItems = [
+    {
+        title: 'Наши Проекты',
+        href: '/#our_projects',
+    },
+    {
+        title: 'Преимущества',
+        href: '/#advantages',
+    },
+    {
+        title: 'О компании',
+        href: '/#about_us',
+    },
+    {
+        title: 'Мы производим',
+        href: '/#we_making',
+    },
+    {
+        title: 'Отзывы',
+        href: '/#reviews',
+    },
+    {
+        title: 'Контакты',
+        href: '/#contacts',
+    },
+] %}
+<section class="bg-white bg-opacity-25 border border-lightgray">
+    <div class="container">
+        <nav class="relative">
+            <div class="flex justify-between items-center">
+                <div class="w-auto">
+                    <a class="flex justify-center" href="/" title="Global Flex">
+                        <img class="h-16 md:h-24 xl:h-28 py-3 px-2" src="{{ 'assets/images/logo.png' | theme }}" alt="Global Flex" width="auto">
+                    </a>
+                </div>
+                <div class="w-auto">
+                    <div class="md:flex justify-end hidden">
+                        <div class="w-full text-end">
+                            <a class="text-black hover:font-bold font-medium text-xs lg:text-base xl:text-lg mr-8" href="tel:+79062915121" title="8 (906) 291-51-21">
+                                <span class="">+7 (906) 291-51-21</span>
+                            </a>
+                            <a class="text-black hover:font-bold font-medium text-xs lg:text-base xl:text-lg" href="mailto:flexstone51@mail.ru" title="flexstone51@mail.ru">
+                                <span class="">flexstone51@mail.ru</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:flex justify-end hidden">
+                        <div class="md:flex hidden items-center justify-between pt-2 lg:pt-3">
+                            {% for obColumn in arMenuItems %}
+                            <div class="ml-4 lg:ml-6">
+                                <a class="text-xs lg:text-base xl:text-lg text-black hover:border-b border-black font-bold uppercase" href="{{ obColumn.href }}" title="{{ obColumn.title }}">{{ obColumn.title }}</a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="md:hidden ml-auto">
+                    <button class="navbar-burger flex items-center p-2 text-white">
+                        <svg class="block h-8 w-8" stroke="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <title>Mobile menu</title>
+                            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div class="hidden navbar-menu fixed top-0 left-0 bottom-0 w-5/6 max-w-sm z-40">
+            <div class="navbar-backdrop fixed inset-0 bg-gray opacity-25"></div>
+            <nav class="relative flex flex-col py-6 px-4 xs:px-6 w-full h-full bg-menu border-r border-gray overflow-y-auto lazyload" data-bg="{{ 'assets/images/bg-5.jpg' | theme }}">
+                <div class="flex items-center mb-6 xs:mb-8">
+                    <a class="mr-auto text-2xl font-medium leading-none" href="/" title="Global Flex">
+                        <img class="h-20" src="{{ 'assets/images/logo.png' | theme }}" alt="Global Flex" width="auto">
+                    </a>
+                    <button class="navbar-close">
+                        <svg class="h-6 w-6 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="gray">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="mb-2 xs:mb-8">
+                    {% for obItem in arMenuItems %}
+                    <div class="mb-3 text-center navbar-close">
+                        <a class="block font-bold uppercase" href="{{ obItem.href }}" title="{{ obItem.title }}">{{ obItem.title }}</a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="py-4 bg-gray bg-opacity-25 text-center flex flex-col">
+                    <a class="hover:font-bold font-medium text-base pb-2" href="tel:+79062915121" title="8 (906) 291-51-21">
+                        <span>+7 (906) 291-51-21</span>
+                    </a>
+                    <a class="hover:font-bold font-medium text-base pb-2" href="mailto:flexstone51@mail.ru" title="flexstone51@mail.ru">
+                        <span>flexstone51@mail.ru</span>
+                    </a>
+                    <p class="font-medium text-base pb-4">г.Мурманск, Кольский проспект 55</p>
+                </div>
+                <p class="mt-6 mb-4 text-sm text-gray">Сайт разработан <a class="hover:underline" href="https://web-studio-51.com/">WEB-STUDIO-51</a></p>
+            </nav>
+        </div>
+    </div>
+</section>
+
+                            <!--<div class="container">-->
+<!--    <nav class="relative pt-4 pb-4 md:pt-2 md:pb-0 lg:pt-3">-->
+<!--        <div class="flex flex-wrap justify-evenly items-center">-->
+<!--            <a class="md:inline-flex hidden items-center text-black hover:text-gray font-medium text-lg" href="tel:+79062915121" title="8 (906) 291-51-21">-->
+<!--                <span class="">+7 (906) 291-51-21</span>-->
+<!--            </a>-->
+<!--            <a class="inline-block" href="/" title="Global Flex">-->
+<!--                <img class="h-16 md:h-24 xl:h-32" src="{{ 'assets/images/logo.jpg' | theme }}" alt="Global Flex" width="auto">-->
+<!--            </a>-->
+<!--            <a class="md:inline-flex hidden items-center text-black hover:text-gray font-medium text-lg" href="mailto:flexstone51@mail.ru" title="flexstone51@mail.ru">-->
+<!--                <span class="">flexstone51@mail.ru</span>-->
+<!--            </a>-->
+<!--            <div class="md:hidden ml-auto">-->
+<!--                <button class="navbar-burger flex items-center p-2 text-white">-->
+<!--                    <svg class="block h-8 w-8" stroke="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">-->
+<!--                        <title>Mobile menu</title>-->
+<!--                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>-->
+<!--                    </svg>-->
+<!--                </button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </nav>-->
+<!--    <div class="hidden navbar-menu fixed top-0 left-0 bottom-0 w-5/6 max-w-sm z-40">-->
+<!--        <div class="navbar-backdrop fixed inset-0 bg-gray opacity-25"></div>-->
+<!--        <nav class="relative flex flex-col py-6 px-6 w-full h-full bg-black border-r overflow-y-auto">-->
+<!--            <div class="flex items-center mb-8">-->
+<!--                <a class="mr-auto text-2xl font-medium leading-none" href="#" title="Global Flex">-->
+<!--                    <img class="h-20" src="{{ 'assets/images/logo.jpg' | theme }}" alt="Global Flex" width="auto">-->
+<!--                </a>-->
+<!--                <button class="navbar-close">-->
+<!--                    <svg class="h-6 w-6 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="gray">-->
+<!--                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>-->
+<!--                    </svg>-->
+<!--                </button>-->
+<!--            </div>-->
+<!--            <div class="mb-8">-->
+<!--                {% for obItem in arMenuItems %}-->
+<!--                <div class="mb-4 text-center">-->
+<!--                    <a class="block font-bold text-gray hover:lightgreen uppercase" href="{{ obItem.href }}" title="{{ obItem.title }}">{{ obItem.title }}</a>-->
+<!--                </div>-->
+<!--                {% endfor %}-->
+<!--            </div>-->
+<!--            <div class="py-4 bg-gray text-center flex flex-col">-->
+<!--                <a class="hover:font-bold font-medium text-base pb-2" href="tel:+79062915121" title="8 (906) 291-51-21">-->
+<!--                    <span>+7 (906) 291-51-21</span>-->
+<!--                </a>-->
+<!--                <a class="hover:font-bold font-medium text-base pb-2" href="mailto:flexstone51@mail.ru" title="flexstone51@mail.ru">-->
+<!--                    <span>flexstone51@mail.ru</span>-->
+<!--                </a>-->
+<!--                <p class="font-medium text-base pb-4">г.Мурманск, Кольский проспект 55</p>-->
+<!--            </div>-->
+<!--            <p class="mt-6 mb-4 text-sm text-blue-800">Сайт разработан <a class="hover:underline" href="https://web-studio-51.com/">WEB-STUDIO-51</a></p>-->
+<!--        </nav>-->
+<!--    </div>-->
+<!--    <div class="md:flex hidden items-center justify-between py-2 lg:py-3">-->
+<!--        {% for obItem in arMenuItems %}-->
+<!--        <div class="">-->
+<!--            <a class="text-sm lg:text-base xl:text-lg text-black hover:text-lightgreen font-bold uppercase" href="{{ obItem.href }}" title="{{ obItem.title }}">{{ obItem.title }}</a>-->
+<!--        </div>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+<!--</div>-->
+
+

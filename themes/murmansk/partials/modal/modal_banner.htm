@@ -1,0 +1,70 @@
+<div id="modal-request" class="modal modal-request fixed w-full h-full top-0 left-0 z-10 opacity-0 invisible overflow-x-hidden overflow-y-auto">
+    <a class="modal_area absolute w-full h-full top-0 left-0"></a>
+    <div class="modal_body min-h-full flex justify-center items-center z-10 px-2.5 py-8">
+        <div class="modal_content max-w-xl relative opacity-0 hidden rounded-md lazyload" data-bg="{{ 'assets/images/bg-modal-2.jpg' | theme }}">
+            <a class="modal_close absolute text-white text-2xl right-4 top-3 cursor-pointer">x</a>
+            <div class="text-center text-white uppercase text-xl font-bold mx-auto mt-10 mb-6">
+                <p>Пожалуйста, оставьте свои данные, мы Вам перезвоним</p>
+            </div>
+
+            <div class="modal_form px-8">
+                <form data-request="{{ genericForm }}::onFormSubmit" class="modalForm">
+
+                    {{ form_token() }}
+
+                    <div id="{{ genericForm }}_forms_flash"></div>
+
+                    <div class="form_cont">
+                        <input id="input" class="w-full border border-white text-white h-14 pl-8 my-1.5 mx-auto bg-transparent" type="text" name="name" placeholder="Имя">
+                    </div>
+                    <div class="form_cont">
+                        <input class="w-full border border-white text-white h-14 pl-8 my-1.5 mx-auto bg-transparent" type="tel" name="telphone" placeholder="Телефон">
+                    </div>
+                    <div class="form_cont">
+                        <input class="w-full border border-white text-white h-14 pl-8 my-1.5 mx-auto bg-transparent" type="text" name="time" placeholder="Удобное время для звонка">
+                    </div>
+                    <div class="modal_send text-center mt-8 mb-16">
+                        <p class="text-white mb-12">Нажимая кнопку «Перезвоните мне», вы даете свое согласие на <a class="underline" href="{{ 'politika-konfidencialnosti'|page }}">обработку персональных данных</a></p>
+                        <button id="simpleContactSubmitButton" class="lg:w-auto  text-sm font-bold uppercase border-2 border-white text-white effect effect-one effect-one-frame" type="submit">
+                            <p class="effect-button py-5 px-8">Перезвоните мне</p>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div id="myModal" class="modal fixed w-full h-full top-0 left-0 align-center justify-center z-20 overflow-x-hidden overflow-y-auto">-->
+<!--    <div class="modal-content relative top-[10%] py-6 mx-auto bg-blue max-w-sm md:max-w-md lg:max-w-lg 2xl:max-w-[38rem] rounded-md">-->
+<!--        <a class="close absolute top-6 right-6 cursor-pointer" data-modal="myModal"><img class="h-6 2xl:h-8" src="{{ 'assets/images/close.svg' | theme }}" alt="close" width="auto"></a>-->
+<!--        <div class="modal_header text-center">-->
+<!--            <p class="font-bold text-white text-base lg:text-lg 2xl:text-xl uppercase mx-auto mt-8 md:mt-10 lg:mt-12 mb-3 md:mb-6 w-full max-w-xs md:max-w-sm lg:max-w-md 2xl:max-w-lg">Пожалуйста, оставьте свои данные, мы Вам перезвоним</p>-->
+<!--        </div>-->
+<!--        <div class="modal_form">-->
+<!--            <form data-request="{{ genericForm2 }}::onFormSubmit" class="modalForm">-->
+
+<!--                {{ form_token() }}-->
+
+<!--                <div id="{{ genericForm2 }}_forms_flash"></div>-->
+
+<!--                <div class="form_cont w-full max-w-xs md:max-w-sm lg:max-w-md 2xl:max-w-lg mx-auto">-->
+<!--                    <input class="w-full rounded-md border outline-darkwave h-10 md:h-14 font-medium text-sm lg:text-base pl-4 lg:pl-10 mx-auto my-2 lg:my-4" type="text" name="name" placeholder="Имя">-->
+<!--                </div>-->
+<!--                <div class="form_cont w-full max-w-xs md:max-w-sm lg:max-w-md 2xl:max-w-lg mx-auto">-->
+<!--                    <input class="w-full rounded-md border outline-darkwave h-10 md:h-14 font-medium text-sm lg:text-base pl-4 lg:pl-10 mx-auto my-2 lg:my-4" type="tel" name="telphone" placeholder="Телефон">-->
+<!--                </div>-->
+<!--                <div class="form_cont w-full max-w-xs md:max-w-sm lg:max-w-md 2xl:max-w-lg mx-auto">-->
+<!--                    <input class="w-full rounded-md border outline-darkwave h-10 md:h-14 font-medium text-sm lg:text-base pl-4 lg:pl-10 mx-auto my-2 lg:my-4" type="email" name="email" placeholder="Электронная почта">-->
+<!--                </div>-->
+<!--                <div class="form_cont w-full max-w-xs md:max-w-sm lg:max-w-md 2xl:max-w-lg mx-auto">-->
+<!--                    <textarea class="w-full rounded-md border outline-darkwave h-16 md:h-28 font-medium text-sm lg:text-base pl-4 lg:pl-10 mx-auto my-2 lg:my-4" type="text" name="comment" placeholder="Описание проблемы"></textarea>-->
+<!--                </div>-->
+<!--                <div class="modal_send mt-2.5 mb-6 md:mb-10 text-center mx-8">-->
+<!--                    <p class="mb-4 md:mb-6 lg:mb-8 text-sm md:text-base text-white">Нажимая кнопку «Оставить заявку», вы даете свое согласие на <a class="underline" href="{{ 'politika'|page }}">обработку персональных данных</a></p>-->
+<!--                    <button id="simpleContactSubmitButton" class="text-blue uppercase font-bold text-sm sm:text-base bg-white px-6 py-4 rounded-md hover:shadow-2xl hover:shadow-darkwave" type="submit">Оставить заявку</button>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->

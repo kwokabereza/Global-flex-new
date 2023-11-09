@@ -1,0 +1,31 @@
+<div class="section_3" id="about_us">
+    <div class="py-8 md:py-10 lg:py-14 xl:py-20 container">
+        <div class="mx-auto">
+            <div class="text relative anim-line element-animation pb-0.5">
+                <h3 class="mb-6 md:mb-8 xl:mb-16 text-start font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl">О компании</h3>
+                <div class="head-line absolute left-0 top-10 md:top-12 xl:top-16 w-full h-px bg-lightgray rounded-md"></div>
+            </div>
+            <div class="grid grid-col-1 lg:grid-cols-2 gap-6 md:gap-12 lg:gap-16 xl:gap-24">
+                <div class="">
+                    <div class="text-justify indent-5 xs:indent-8 text-base xs:text-lg md:text-xl xl:text-2xl"><h1 class="inline font-bold">Global Flex</h1>  - это производственная компания, по изготовлению гибкого камня, гибкого клинкера, термопанелей для внешней и внутренней отделки, элементов декора, на самом современном оборудовании и по уникальной технологии, осуществляющая свою деятельность на территории города Мурманска, что позволяет избежать посредников и проблем с логистикой.</div>
+                    <div class="text-justify indent-5 xs:indent-8 text-base xs:text-lg md:text-xl xl:text-2xl">Мы являемся членами общероссийской общественной организации "Деловая Россия".</div>
+                    <div class="text-justify indent-5 xs:indent-8 text-base xs:text-lg md:text-xl xl:text-2xl">Материал экологически чистый, долговечный, пожаробезопасный, что не мало важно в современных реалиях, дышащий и пропускающий свет, что позволяет установку не только во влажных помещениях, но подходит для создания арт-пространств и уникальных дизайнерских решений за счёт счёта и ультрафиолетовой печати.</div>
+                </div>
+                <div class="mask mask-one mask-one-frame">
+                    {% partial "helpers/image"
+                    src= "themes/murmansk/assets/images/about_us.jpg"
+                    mobSrc= "themes/murmansk/assets/images/about_us.jpg"
+                    width = 1280
+                    height = 958
+                    mobWidth = 1280
+                    mobHeight = 958
+                    alt = "Global Flex"
+                    class= "mask-img block w-full h-full object-cover align-middle mx-auto"
+                    %}
+<!--                    <img class="mask-img block w-full object-cover align-middle mx-auto" src="{{ 'assets/images/about_us.jpg' | theme }}" alt="Global Flex">-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

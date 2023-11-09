@@ -1,0 +1,12 @@
+
+@font-face {
+    font-family: 'VK Sans Display Regular';
+    src: url('VK Sans Display Regular.eot');
+    src: local('VK Sans Display Regular'), local('VK Sans Display Regular'),
+        url('VK Sans Display Regular.eot?#iefix') format('embedded-opentype'),
+        url('VK Sans Display Regular.woff2') format('woff2'),
+        url('VK Sans Display Regular.woff') format('woff'),
+        url('VK Sans Display Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

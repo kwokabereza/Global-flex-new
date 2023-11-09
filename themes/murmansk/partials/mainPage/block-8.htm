@@ -1,0 +1,52 @@
+[builderList]
+modelClass = "Annb\Globalflex\Models\Review"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "id"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+{% set records = builderList.records %}
+<div class="section_7 pb-8 pt-8 md:pb-10 md:pt-10 lg:pb-14 lg:pt-14 xl:pb-20 xl:pt-20" id="reviews">
+    <div class="container">
+        <div class="mx-auto">
+            <div class="text relative anim-line element-animation pb-0.5">
+                <h3 class="mb-6 md:mb-8 xl:mb-16 text-start font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl">Отзывы клиентов</h3>
+                <div class="head-line absolute left-0 top-10 md:top-12 xl:top-16 w-full h-px bg-lightgray rounded-md"></div>
+            </div>
+            <div class="swiper reviews-slider">
+                <div class="swiper-wrapper">
+                {% for record in records %}
+                    <div class="swiper-slide pt-4 px-4 pb-6 md:p-8 border border-lightgreen rounded-md">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+                            <div class="h-64 sm:h-72 md:h-80 mask mask-one mask-one-frame">
+                                {% set img = "/storage/app/media/" ~ record.mediafinder %}
+                                {% partial "helpers/image"
+                                src= img
+                                mobSrc= img
+                                alt = "Фото проекта"
+                                class= "mask-img block w-full h-full object-cover align-middle mx-auto"
+                                %}
+<!--                                <img class="object-cover h-full max-h-80 w-full mask-img" src="../storage/app/media/{{record.mediafinder}}" alt="">-->
+                            </div>
+                            <div class="">
+                                <h4 class="text-justify indent-5 xs:indent-8 text-base xs:text-lg md:text-xl xl:text-2xl font-bold pb-2 md:pb-4">{{record.title}}</h4>
+                                <p class="text-justify indent-5 xs:indent-8 text-sm xs:text-base md:text-lg xl:text-xl">{{record.content}}</p>
+                            </div>
+                        </div>
+                    </div>
+                 {% endfor %}
+                </div>
+                <div class="swiper-pagination reviews-pagination"></div>
+<!--                    <div class="swiper-button-prev reviews-prev"></div>-->
+<!--                    <div class="swiper-button-next reviews-next"></div>-->
+<!--                    <div class="swiper-scrollbar reviews-scrollbar"></div>-->
+            </div>
+            {% partial "button/in_reviews" %}
+        </div>
+    </div>
+</div>
+{% partial "modal/modal_reviews" %}
+

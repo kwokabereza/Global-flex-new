@@ -1,0 +1,91 @@
+{% set arMenuItems = [
+    {
+        title: 'Наши проекты',
+        href: '/#our_projects',
+    },
+    {
+        title: 'Преимущества',
+        href: '/#advantages',
+    },
+    {
+        title: 'О компании',
+        href: '/#about_us',
+    },
+    {
+        title: 'Мы производим',
+        href: '/#we_making',
+    },
+    {
+        title: 'Отзывы',
+        href: '/#reviews',
+    },
+    {
+        title: 'Контакты',
+        href: '/#contacts',
+    },
+] %}
+    <section class="relative lazyload" data-bg="{{ 'assets/images/bg-modal-2.jpg' | theme }}">
+        <div class="container mx-auto">
+            <div class="border-b border-white">
+                <div class="flex flex-wrap items-start justify-between">
+                    <div class="w-auto">
+                        <a class="block text-lg font-bold pt-4 md:pt-8 lg:pb-4" href="/">
+                            <img class="h-20 xs:h-24 lg:h-28 xl:h-32" src="{{ 'assets/images/logo.png' | theme }}" alt="Global Flex" width="auto">
+                        </a>
+                    </div>
+                    <div class="w-auto block lg:hidden">
+                        {% partial "button/in_footer" %}
+                    </div>
+                    <div class="w-auto">
+                        <div class="flex flex-wrap items-start justify-between mt-4 mb-4 lg:mb-0 lg:mt-8">
+                            {% for obColumn in arMenuItems %}
+                            <div class="mb-0 w-28 xs:w-32 sm:w-auto sm:ml-4 lg:ml-8"><a class="text-sm md:text-lg xl:text-xl text-white hover:text-blue font-bold" href="{{ obColumn.href }}">{{ obColumn.title }}</a></div>
+                            {% endfor %}
+                        </div>
+                        <div class="hidden lg:block">{% partial "button/in_footer" %}</div>
+
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="flex flex-wrap justify-between items-center py-2 sm:py-3">
+                    <div class="">
+                        <p class="text-xs xs:text-sm xl:text-base text-white pb-2"><a class="hover:underline" href="/politika-konfidencialnosti">Политика конфиденциальности</a></p>
+                    </div>
+                    <div class="flex">
+                        <a class="items-center w-8 h-8 xl:w-12 xl:h-12 hover:scale-110" href="https://vk.com/flexstone51" target="_blank">
+                            <img class="vk" src="{{ 'assets/images/vk.svg' | theme }}" alt="VK" width="auto">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="bg-black py-3">
+        <div class="container">
+            <p class="text-xs xs:text-sm xl:text-base text-center text-white">Copyright © 2017 - {{ 'now' | date ('Y') }}. Сайт сделан компанией <a class="hover:underline" href="https://web-studio-51.com/">Web-studio-51</a>. Все права защищены.</p>
+        </div>
+    </div>
+{% partial "modal/modal_footer" %}
+
+<script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () {
+            (m[i].a = m[i].a || []).push(arguments)
+        };
+        m[i].l = 1 * new Date();
+        k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(39961325, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
+    });
+
+
+</script>
+
+<!-- /Yandex.Metrika counter -->

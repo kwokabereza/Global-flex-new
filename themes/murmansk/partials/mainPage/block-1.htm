@@ -1,0 +1,86 @@
+[builderList]
+modelClass = "Annb\Globalflex\Models\Video"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "id"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+
+[builderList builderList2]
+modelClass = "Annb\Globalflex\Models\Project"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "id"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+{% partial "site/banner" %}
+<div class="section_1 relative" id="our_projects">
+    <div class="absolute -top-20 md:-top-24 lg:-top-28 xl:-top-32 right-4 opacity-30">
+        <img class="w-28 xs:w-32 md:w-40 lg:w-48 mx-auto mx-auto thumbnail" src="{{ 'assets/images/elements/Group-8.svg' | theme }}" alt="element">
+    </div>
+    <div class="py-8 md:py-10 lg:py-14 xl:py-20 container">
+        <div class="mx-auto">
+            <div class="text relative anim-line element-animation pb-0.5">
+                <h2 class="mb-6 md:mb-8 xl:mb-16 text-start font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl">Наши проекты</h2>
+                <div class="head-line absolute left-0 top-10 md:top-12 xl:top-16 w-full h-px bg-lightgray rounded-md"></div>
+            </div>
+
+             {% set records = builderList2.records %}
+            <div class="p-3 sm:p-4 lg:p-6 border border-lightgreen rounded-md">
+              <div class="flex flex-wrap">
+              {% for record in records %}
+              <div class="hidden" id="content-{{ record.id }}">
+                        <div class="flex flex-wrap gap-1 sm:gap-2 xl:gap-4 popup-gallery">
+                        {% for image in record.posters %}
+                            <a href="{{ image.path }}" class="colorbox-main cursor-pointer grow h-20 xxs:h-24 sm:h-32 md:h-40 lg:h-52 xl:h-56 2xl:h-68 3xl:h-80 relative mask mask-one mask-one-frame">
+                                {% set img = "/storage/app/media/" ~ image.path %}
+                                {% partial "helpers/image"
+                                src= img
+                                mobSrc= img
+                                alt = "Наши проекты"
+                                class= "mask-img block w-full h-full object-cover align-middle"
+                                %}
+                                <!-- <img class="mask-img block w-full h-full object-cover align-middle" src="{{ image.path }}" alt="Наши проекты">-->
+                            </a>
+                         {% endfor %}
+                        </div>
+                    </div>
+                    <div class="tab-nav border-lightgreen mb-2 xs:mb-4 order-[-1] text-2xs xs:text-xs sm:text-sm md:text-base xl:text-xl">
+                         <input checked id="tab-btn-{{record.id}}" name="tab-btn" type="radio" value="">
+                        <label for="tab-btn-{{record.id}}">{{ record.title }}</label>
+                    </div>
+            {% endfor %}
+                </div>
+            </div>
+
+            {% set records = builderList.records %}
+            <div class="border border-lightgreen rounded-md mt-12">
+                <div class="swiper video-slider p-3 sm:p-4 lg:p-6">
+                    <div class="swiper-wrapper">
+                    {% for record in records %}
+                        <div class="swiper-slide">
+                            <div class="grid grid-cols-1">
+                                <div class="border-2 border-lightgreen rounded-md">
+                                    <iframe class="w-full h-48 xs:h-60 sm:h-44 md:h-64 xl:h-80 rounded-md" src="{{record.slug}}" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" allowfullscreen></iframe>
+                                </div>
+                                <div class="">
+                                    <h4 class="text-center text-base xs:text-lg md:text-xl xl:text-2xl font-bold pt-2 md:pt-4 pb-8">{{record.title}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper-pagination video-pagination"></div>
+                    <div class="swiper-button-prev video-prev"></div>
+                    <div class="swiper-button-next video-next"></div>
+<!--                    <div class="swiper-scrollbar video-scrollbar"></div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

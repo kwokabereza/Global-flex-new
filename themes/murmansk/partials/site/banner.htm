@@ -1,0 +1,28 @@
+<div class="container pt-8 pb-8 md:pt-10 md:pb-10 lg:pt-14 lg:pb-14 xl:pt-20 xl:pb-20">
+    <div class="grid grid-col-1 lg:grid-cols-2 gap-16">
+        <div class="mask mask-one mask-one-frame">
+            {% partial "helpers/image"
+            src= "themes/murmansk/assets/images/banner.jpg"
+            mobSrc= "themes/murmansk/assets/images/banner.jpg"
+            width = 714
+            height = 447
+            mobWidth = 714
+            mobHeight = 447
+            alt = "banner"
+            class= "mask-img block w-full h-full object-cover align-middle mx-auto"
+            %}
+<!--            <img class="mask-img block w-full" src="{{ 'assets/images/banner.jpg' | theme }}" alt="banner">-->
+        </div>
+        <div class="relative flex flex-col justify-between">
+            <div class="">
+                <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl xl:leading-[3rem] text-start font-bold">Компания <span class="font-bold text-lightgreen">"Global Flex"</span></h3>
+                <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl xl:leading-[3rem]">производитель современных отделочных материалов в г.Мурманск.</h3>
+                <h4 class="text-sm md:text-lg lg:text-xl xl:text-2xl pt-4 lg:pt-2">Предлагаем красивый, экологически чистый, пожаробезопасный и долговечный материал.</h4>
+<!--                <h4 class="text-base lg:text-xl xl:text-2xl pt-12 xl:leading-10 text-justify">При заказе от 15 кв. м - монтаж <span class="font-bold uppercase">В ПОДАРОК!</span></h4>-->
+            </div>
+            {% partial "button/in_banner" %}
+        </div>
+    </div>
+
+</div>
+{% partial "modal/modal_banner" %}

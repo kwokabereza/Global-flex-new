@@ -1,0 +1,25 @@
+{
+  "assets/images/bg-modal.jpg": {
+    "file": "assets/bg-modal-a6b2cf46.jpg",
+    "src": "assets/images/bg-modal.jpg"
+  },
+  "src/css/global.css": {
+    "file": "assets/global-8c7d4dfb.css",
+    "isEntry": true,
+    "src": "src/css/global.css"
+  },
+  "src/css/images/loading.gif": {
+    "file": "assets/loading-646ef3b2.gif",
+    "src": "src/css/images/loading.gif"
+  },
+  "src/js/global.js": {
+    "file": "assets/main-77a78dc0.js",
+    "isEntry": true,
+    "src": "src/js/global.js"
+  },
+  "src/js/index.js": {
+    "file": "assets/index-9b355082.js",
+    "isEntry": true,
+    "src": "src/js/index.js"
+  }
+}

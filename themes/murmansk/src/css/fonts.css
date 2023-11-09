@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'VK Sans Display Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local(""), url("../../fonts/VK Sans/VK Sans Display Regular.eot?#iefix") format("embedded-opentype"),
+    url("../../fonts/VK Sans/VK Sans Display Regular.woff") format("woff"),
+    url("../../fonts/VK Sans/VK Sans Display Regular.ttf") format("truetype");
+}

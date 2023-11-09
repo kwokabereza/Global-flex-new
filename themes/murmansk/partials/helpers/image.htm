@@ -1,0 +1,13 @@
+<picture class="w-full">
+    <source data-srcset="{{src|resize(width, height, {'mode': 'crop', 'extension': 'webp', quality:'80'}) }}"
+            type="image/webp" media="(min-width: 600px)"
+            width="{{width}}" height="{{height}}">
+    <source data-srcset="{{mobSrc|resize(mobWidth, mobHeight, {'mode': 'crop', 'extension': 'webp', quality:'80'})}}"
+            type="image/webp" media="(max-width: 600px)" width="{{mobWidth}}" height="{{mobHeight}}">
+    <img class="lazyload {{class}}" loading="lazy"   data-sizes="auto"
+         data-src="{{mobSrc|resize(width, height, {quality:'80'})}}" alt="{{alt}}"
+         itemprop="{{prop}}" width="{{width}}" height="{{height}}" loading="lazy"
+         {% if color is not empty %} style="background-color: {{color}}" {% endif %}>
+</picture>
+
+
